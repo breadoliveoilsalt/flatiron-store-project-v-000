@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  # devise_for :users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
+
+
   root 'store#index', as: 'store'
 
   resources :items, only: [:show, :index]
@@ -10,5 +16,7 @@ Rails.application.routes.draw do
   resources :orders, only: [:show]
 
   post 'carts/:id/checkout', to: 'carts#checkout', as: 'checkout'
+
+
 
 end
