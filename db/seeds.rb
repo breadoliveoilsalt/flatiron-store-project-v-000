@@ -18,3 +18,8 @@ end
 User.create(email: "sam@sam.com", password: "delicious")
 
 User.create(email: "betty@betty.com", password: "understandable")
+
+
+Category.create(title: "Baby Stuff")
+Category.create(title: "Kid Stuff")
+Category.create(title: "Adult Stuff")
