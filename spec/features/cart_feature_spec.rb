@@ -144,7 +144,6 @@ describe 'Feature Test: Cart', :type => :feature do
           visit store_path
           within("form[action='#{line_items_path(item_id: first_item)}']") do
             click_button("Add to Cart")
-            binding.pry
           end
         end
         @user.reload
