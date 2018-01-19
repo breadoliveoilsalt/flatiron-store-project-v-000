@@ -13,8 +13,7 @@ class Cart < ActiveRecord::Base
   end
 
   def add_item(item_id)
-    item = Item.find_by(id: item_id) #try: if self.items.ids.include?(item_id)
-    if self.items.include?(item)
+    if self.items.ids.include?(item_id)
       line_item = self.line_items.find_by(item_id: item_id)
       line_item.quantity += 1
       line_item
@@ -22,6 +21,5 @@ class Cart < ActiveRecord::Base
       self.line_items.build(item_id: item_id)
     end
   end
-
 
 end

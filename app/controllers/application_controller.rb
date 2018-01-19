@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
 
-  def cart_active
+  def active_cart
     current_user.current_cart
   end
 
